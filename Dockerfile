@@ -5,7 +5,7 @@ ENV TITLE=Remote
 
 RUN \
   echo "**** add icon ****" && \
-  curl -o /usr/share/icons/hicolor/32x32/apps/telegram.png https://telegram.org/img/favicon-32x32.png && \
+  curl -o /usr/share/icons/hicolor/128x128/apps/teamviewer.png https://www.teamviewer.com/etc.clientlibs/teamviewer/clientlibs/clientlib-resources/resources/favicon.png && \
   echo "**** install packages ****" && \
   apt-get update && \
   apt-get install -y --no-install-recommends xz-utils libdbus-1-3 libqt5gui5 libqt5widgets5 libqt5qml5 libqt5quick5 libqt5webkit5 libqt5x11extras5 qml-module-qtquick2 qml-module-qtquick-controls qml-module-qtquick-dialogs qml-module-qtquick-window2 qml-module-qtquick-layouts desktop-file-utils fonts-noto-cjk-extra && \
