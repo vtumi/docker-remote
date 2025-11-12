@@ -27,6 +27,8 @@ RUN \
 # add local files
 COPY /root /
 
+RUN chmod +x /scripts/start.sh
+
 # ports and volumes
 EXPOSE 3000
 
