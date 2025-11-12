@@ -2,7 +2,7 @@ FROM ghcr.io/linuxserver/baseimage-selkies:ubuntunoble
 
 # title
 ENV TITLE=Remote
-/opt/teamviewer/config
+
 RUN \
   echo "**** add icon ****" && \
   curl -o /usr/share/icons/hicolor/128x128/apps/teamviewer.png https://www.teamviewer.com/etc.clientlibs/teamviewer/clientlibs/clientlib-resources/resources/favicon.png && \
