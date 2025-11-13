@@ -6,7 +6,7 @@ if [ ! -f /config/.config/openbox/menu.xml ] || ! cmp /defaults/menu.xml /config
     openbox --reconfigure
 fi
 
-if [ ! -f /config/.config/tint2/tint2rc ] then
+if [ ! -f /config/.config/tint2/tint2rc ]; then
     mkdir -p /config/.config/tint2
     cp /etc/xdg/tint2/tint2rc /config/.config/tint2/tint2rc
     sed -i 's/^panel_items = .*/panel_items = T/' /config/.config/tint2/tint2rc
