@@ -4,8 +4,6 @@ FROM ghcr.io/linuxserver/baseimage-selkies:ubuntunoble
 ENV TITLE=Remote
 
 RUN \
-  echo "**** add icon ****" && \
-  curl -o /usr/share/icons/hicolor/128x128/apps/teamviewer.png https://www.teamviewer.com/etc.clientlibs/teamviewer/clientlibs/clientlib-resources/resources/favicon.png && \
   echo "**** install packages ****" && \
   apt-get update && \
   apt-get install -y --no-install-recommends xz-utils desktop-file-utils fonts-noto-cjk-extra && \
@@ -26,8 +24,6 @@ RUN \
 
 # add local files
 COPY /root /
-
-RUN chmod +x /scripts/start.sh
 
 # ports and volumes
 EXPOSE 3000
