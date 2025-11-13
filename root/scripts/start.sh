@@ -1,5 +1,12 @@
 #!/bin/bash
 
+if [ ! -f /config/.config/openbox/rc.xml ] || grep -q '<application class="\*">.*<maximized>yes</maximized>' /config/.config/openbox/rc.xml; then
+    mkdir -p /config/.config/openbox
+    [ ! -f /config/.config/openbox/rc.xml ] && cp /etc/xdg/openbox/rc.xml /config/.config/openbox/
+    sed -i '/<application class="\*">/,/<\/application>/s/<maximized>yes<\/maximized>/<maximized>no<\/maximized>/' /config/.config/openbox/rc.xml
+    openbox --reconfigure
+fi
+
 if [ ! -f /config/.config/openbox/menu.xml ] || ! cmp /defaults/menu.xml /config/.config/openbox/menu.xml; then
     mkdir -p /config/.config/openbox
     cp /defaults/menu.xml /config/.config/openbox/menu.xml
