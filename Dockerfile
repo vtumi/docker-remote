@@ -13,6 +13,12 @@ RUN \
   mv /tmp/teamviewer /opt && \
   ln -s /opt/teamviewer/tv_bin/script/teamviewer /usr/bin/teamviewer && \
   rm -rf /tmp/teamviewer.tar.xz && \
+  curl -L -o /tmp/scrcpy.tar.gz $(curl -s https://api.github.com/repos/Genymobile/scrcpy/releases | grep browser_download_url | grep 'scrcpy-linux-x86_64-.*.tar.gz' | head -n 1 | cut -d '"' -f 4) && \
+  tar zxvf /tmp/scrcpy.tar.gz -C /tmp && \
+  mv /tmp/scrcpy /opt && \
+  ln -s /opt/scrcpy/adb /usr/bin/adb && \
+  ln -s /opt/scrcpy/scrcpy /usr/bin/scrcpy && \
+  rm -rf /tmp/scrcpy.tar.gz && \
   fc-cache -fv && \
   echo "**** cleanup ****" && \
   apt-get autoclean && \
