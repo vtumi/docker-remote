@@ -22,6 +22,8 @@ if [ ! -f /config/.config/tint2/tint2rc ]; then
 fi
 
 nohup tint2 > /dev/null 2>&1 &
+nohup remote > /dev/null 2>&1 &
+nohup /usr/bin/chromium --app=http://127.0.0.1:10010 > /dev/null 2>&1 &
 
 if [[ -n "$PUID" && -n "$PGID" ]]; then
     sudo chown -R $PUID:$PGID /opt/teamviewer
