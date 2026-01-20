@@ -18,7 +18,7 @@ RUN \
   ln -s /opt/scrcpy/adb /usr/bin/adb && \
   ln -s /opt/scrcpy/scrcpy /usr/bin/scrcpy && \
   mkdir -p /opt/chromium && \
-  curl -L -o /tmp/chromium.tar.gz "https://github.com/vtumi/docker-chromium/releases/download/v1.0.0/chromium-linux.tar.gz" && \
+  curl -L -o /tmp/chromium.tar.gz "https://github.com/vtumi/docker-chromium/releases/download/v1.0.0/chromium-linux-amd64.tar.gz" && \
   tar zxvf /tmp/chromium.tar.gz -C /tmp && \
   mv /tmp/chromium/* /opt/chromium/ && \
   fc-cache -fv && \
